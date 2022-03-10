@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="categoryId" inverseEntity="Task"/>
     </entity>
@@ -10,7 +11,7 @@
         <relationship name="categoryId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="tasks" inverseEntity="Category"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-362.3359375" positionY="-120.3046875" width="128" height="59"/>
+        <element name="Category" positionX="-362.3359375" positionY="-120.3046875" width="128" height="74"/>
         <element name="Task" positionX="16.25390625" positionY="-27.36328125" width="128" height="88"/>
     </elements>
 </model>
