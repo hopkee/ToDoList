@@ -49,14 +49,13 @@
         <scene sceneID="Zge-Gv-eGU">
             <objects>
                 <tableViewController id="Gu8-uI-lWa" customClass="TasksVC" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ost-tO-Lud">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="Ost-tO-Lud">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Bfd-ve-BfI">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Start writing a task name" id="Bfd-ve-BfI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="gBR-HI-De4">
@@ -68,18 +67,35 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Gu8-uI-lWa" id="WwY-qn-6qo"/>
                             <outlet property="delegate" destination="Gu8-uI-lWa" id="tLo-kT-ShK"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="6GG-bV-0ZF">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="Tei-6l-lGV">
-                            <connections>
-                                <action selector="addTaskBtn:" destination="Gu8-uI-lWa" id="4gH-po-wD2"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="done" systemItem="add" id="Tei-6l-lGV">
+                                <connections>
+                                    <action selector="addTaskBtn:" destination="Gu8-uI-lWa" id="4gH-po-wD2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="WvE-vy-w35">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Ld9-bh-4ig">
+                                    <rect key="frame" x="260.5" y="5" width="92" height="34.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                    <connections>
+                                        <action selector="editRows" destination="Gu8-uI-lWa" eventType="touchUpInside" id="iXs-aQ-VNj"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="Bfd-ve-BfI" id="Byl-F0-YwS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5G-Gl-Wna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
